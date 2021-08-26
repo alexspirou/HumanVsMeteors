@@ -9,16 +9,16 @@ class CMeteors : public CEnemy
 public:
     CMeteors(int x, int y, int w, int h);
     virtual ~CMeteors() {}
-    void draw();
-    void clean();
-    SDL_Rect getRect() { return destRect; }
-    void setRect(SDL_Rect rect) { destRect = rect; }
-    void setRect(int x, int y, int w, int h) { destRect.x = x; destRect.y = y; destRect.w = w; destRect.h = h; }
-    SDL_Rect destRect;
+    virtual void draw() override;
+    virtual void clean() override;
+    void update();
+    void setExplosion(bool explosion) { m_bIsExpolosion = explosion; }
+    //Getters
+    bool isExplosion() { return m_bIsExpolosion; }
+
 
 private:
-    CTextureManager texManager;
 
-
+    bool m_bIsExpolosion{false};
 };
 

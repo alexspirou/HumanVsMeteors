@@ -66,18 +66,20 @@ void CMenu::render()
 //
 //}
 
-void CMenu::isMenu() 
+bool CMenu::isMenu() 
 {
-    SDL_RenderClear(CEngine::m_renderer);
+    //SDL_RenderClear(CEngine::m_renderer);
     while (m_bIsMenuOn)
     {
         render();
         events();
         SDL_RenderPresent(CEngine::m_renderer);
+       
     }
+    return true;
 }
-void CMenu::events() {
-
+void CMenu::events()
+{
     if (m_bIsMenuOn) 
     {
         SDL_Event event;
@@ -93,6 +95,8 @@ void CMenu::events() {
                 {
                     std::cout << "Right " << m_flag << std::endl;
                     m_flag++;
+                    m_soundManager.loadSound("music\\menuMove.wav");
+
                     break;
                 }
             }
@@ -102,6 +106,7 @@ void CMenu::events() {
                 {
                     std::cout << "Left " << m_flag << std::endl;
                     m_flag--;
+                    m_soundManager.loadSound("music\\menuMove.wav");
                     break;
                 }
             }
@@ -110,18 +115,26 @@ void CMenu::events() {
                 switch (m_flag)
                 {
                 case 0:
+                    //Space to Play
+                    m_soundManager.loadSound("music\\playMenu.wav");
                     m_bIsMenuOn = false;
                 case 1:
+                    //Space to difficulty
+                    prevFlag = m_flag;
                     m_flag = 3;
                     break;
                 case 2:
+                    //Space to Levels
+                    prevFlag = m_flag;
                     m_flag = 4;
                     break;
                 }
             }
-            if (event.key.keysym.sym == SDLK_BACKSPACE) 
+            if (event.key.keysym.sym == SDLK_BACKSPACE && m_flag == 3 || m_flag == 4)
+
             {
-                m_flag = 0;
+                m_soundManager.loadSound("music\\backMenu.wav");
+                m_flag = prevFlag;
             }
 
             }

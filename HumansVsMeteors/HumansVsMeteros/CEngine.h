@@ -1,6 +1,9 @@
 #pragma once
 #include "SDL.h"
 #include "SDL_image.h"
+#include "SDL_mixer.h"
+#include <SDL_ttf.h>
+
 #include "CLevels.h"
 #include "CMainCharacter.h"
 #include "CMeteors.h"
@@ -8,14 +11,14 @@
 #include "CMenu.h"
 #include "CBackGround.h"
 
-#define SCREEN_WIDTH 640
-#define SCREEN_HEIGHT 800
+#define SCREEN_WIDTH 800
+#define SCREEN_HEIGHT 640
 
 class CEngine
 {
 public:
     CEngine() { init(); }
-    ~CEngine() { delete[] player; delete[]levels; }
+    ~CEngine();
     bool init(); //Whent the program starts create the need staff
     bool clean(); //Clean surfaces, renderers etc
     void update(); // Update events renders etc
@@ -26,17 +29,18 @@ public:
     //getters
     inline CMainCharacter* get_player() { return player; }
     inline bool getIsRunning() { return m_isRunning; }
-    inline bool get_gameover() { return gameover; }
-    inline bool getIsWin() { return m_bisWin; }
+    inline bool isGameOver() { return gameover; }
+    inline bool isWin() { return m_bisWin; }
 
     //Setters
-    inline void setIsWin(bool f_isWin) { m_bisWin = f_isWin; }
+    inline void setWin(bool f_isWin) { m_bisWin = f_isWin; }
 
     static SDL_Renderer* m_renderer;
     static CMainCharacter* player;
 
     static bool gameover;
 private:
+
     SDL_Window* m_window;
     bool m_isRunning = true;
     bool m_bisWin = true;
@@ -45,4 +49,8 @@ private:
     CTextureManager texManager;
     CBackGround* background = nullptr;
     CMenu* menu = nullptr;
+    CFontTexture* score = nullptr;
+
+
+    int counter = 0;
 };

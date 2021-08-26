@@ -26,6 +26,7 @@ void CBackGround::main_background()
 {
     texManager.draw("background", xpos_1, 0, 1200, 1000);
     texManager.draw("background", xpos_2, 0, 1200, 900);
+
 }
 
 void CBackGround::gameover_background()

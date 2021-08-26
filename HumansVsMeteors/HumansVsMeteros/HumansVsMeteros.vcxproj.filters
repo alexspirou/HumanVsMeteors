@@ -9,18 +9,11 @@
       <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
       <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
     </Filter>
-    <Filter Include="Resource Files">
-      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
-      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
-    </Filter>
     <Filter Include="Header Files\1_Core">
       <UniqueIdentifier>{0e818047-1495-4ed4-8d8d-6bc6c9883db8}</UniqueIdentifier>
     </Filter>
     <Filter Include="Header Files\2_GameCharacters">
       <UniqueIdentifier>{b0777ebc-d6ec-4908-9b88-1891c0bf4c97}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\4_Graphics">
-      <UniqueIdentifier>{ef84ba4f-444a-4c6b-af55-ea8c1fa5c419}</UniqueIdentifier>
     </Filter>
     <Filter Include="Header Files\3_Levels">
       <UniqueIdentifier>{17efd416-77d3-4224-adc4-fe2ff8bc6d7f}</UniqueIdentifier>
@@ -34,8 +27,21 @@
     <Filter Include="Source Files\3_Levels">
       <UniqueIdentifier>{68e1fb3a-28d2-4b9d-9f10-740ee8b149ef}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\4_Graphics">
+    <Filter Include="Header Files\4_Managers">
+      <UniqueIdentifier>{ef84ba4f-444a-4c6b-af55-ea8c1fa5c419}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\4_Managers">
       <UniqueIdentifier>{e24a8a5d-a881-4b1c-bd19-ed850f474881}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\5_Components">
+      <UniqueIdentifier>{1d1bf976-82b8-4c75-94f7-7edd5979fa44}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Base_Classes">
+      <UniqueIdentifier>{b60f8c68-fdc2-405c-9a89-701747a7fa89}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\1_Core\Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -61,9 +67,24 @@
       <Filter>Source Files\3_Levels</Filter>
     </ClCompile>
     <ClCompile Include="CTextureManager.cpp">
-      <Filter>Source Files\4_Graphics</Filter>
+      <Filter>Source Files\4_Managers</Filter>
     </ClCompile>
     <ClCompile Include="CMainCharacter.cpp">
+      <Filter>Source Files\2_GameCharacters</Filter>
+    </ClCompile>
+    <ClCompile Include="CLaserGun.cpp">
+      <Filter>Source Files\2_GameCharacters</Filter>
+    </ClCompile>
+    <ClCompile Include="CSoundManager.cpp">
+      <Filter>Source Files\4_Managers</Filter>
+    </ClCompile>
+    <ClCompile Include="CCollisionManager.cpp">
+      <Filter>Source Files\4_Managers</Filter>
+    </ClCompile>
+    <ClCompile Include="CFontTexture.cpp">
+      <Filter>Source Files\4_Managers</Filter>
+    </ClCompile>
+    <ClCompile Include="CAlien.cpp">
       <Filter>Source Files\2_GameCharacters</Filter>
     </ClCompile>
   </ItemGroup>
@@ -83,11 +104,8 @@
     <ClInclude Include="CBackGround.h">
       <Filter>Header Files\2_GameCharacters</Filter>
     </ClInclude>
-    <ClInclude Include="IObject.h">
-      <Filter>Header Files\2_GameCharacters</Filter>
-    </ClInclude>
     <ClInclude Include="CTextureManager.h">
-      <Filter>Header Files\4_Graphics</Filter>
+      <Filter>Header Files\4_Managers</Filter>
     </ClInclude>
     <ClInclude Include="CLevels.h">
       <Filter>Header Files\3_Levels</Filter>
@@ -95,8 +113,32 @@
     <ClInclude Include="CMenu.h">
       <Filter>Header Files\3_Levels</Filter>
     </ClInclude>
-    <ClInclude Include="CEnemy.h">
+    <ClInclude Include="CSoundManager.h">
+      <Filter>Header Files\4_Managers</Filter>
+    </ClInclude>
+    <ClInclude Include="CCollisionManager.h">
+      <Filter>Header Files\4_Managers</Filter>
+    </ClInclude>
+    <ClInclude Include="CFontTexture.h">
+      <Filter>Header Files\4_Managers</Filter>
+    </ClInclude>
+    <ClInclude Include="CAlien.h">
       <Filter>Header Files\2_GameCharacters</Filter>
+    </ClInclude>
+    <ClInclude Include="CLaserGun.h">
+      <Filter>Header Files\5_Components</Filter>
+    </ClInclude>
+    <ClInclude Include="CAlienLaserBeam.h">
+      <Filter>Header Files\5_Components</Filter>
+    </ClInclude>
+    <ClInclude Include="IObject.h">
+      <Filter>Header Files\Base_Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="CEnemy.h">
+      <Filter>Header Files\Base_Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="CComponent.h">
+      <Filter>Header Files\Base_Classes</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

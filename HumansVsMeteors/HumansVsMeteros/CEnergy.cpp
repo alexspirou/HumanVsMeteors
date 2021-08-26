@@ -1,6 +1,6 @@
 #include "CEnergy.h"
 
-CEnergy::CEnergy(int x, int y, int w, int h) : IObject()
+CEnergy::CEnergy(int x, int y, int w, int h) : CComponent(x, y, w, h) 
 {
     destRect = { x, y, w, h };
     texManager.load("energy", "assets\\energy.png");
@@ -18,6 +18,5 @@ void CEnergy::draw()
 }
 void CEnergy::clean() 
 {
-
 
 }

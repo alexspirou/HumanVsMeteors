@@ -1,19 +1,20 @@
 #pragma once
 #include "SDL.h"
 #include "SDL_image.h"
-#include "CTextureManager.h"
 #include "IObject.h"
-class CEnergy : public IObject
+#include "CComponent.h"
+#include "CTextureManager.h"
+
+class CEnergy : public CComponent
 {
 public:
     CEnergy(int x, int y, int w, int h);
     ~CEnergy();
-    void draw();
-    void clean();
-    void drop();
-    SDL_Rect getRect() { return destRect; }
-    SDL_Rect destRect;
+    virtual void draw() override;
+    virtual void clean() override;
+    virtual void update() override {}
+
 private:
-    CTextureManager texManager;
+    //CTextureManager texManager;
 };
 

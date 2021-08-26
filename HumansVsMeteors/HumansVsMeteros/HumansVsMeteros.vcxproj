@@ -95,7 +95,7 @@
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalLibraryDirectories>D:\Programs\SDL2\lib\x86;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>SDL2.lib;SDL2main.lib;SDL2_image.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>SDL2.lib;SDL2main.lib;SDL2_image.lib;SDL2_mixer.lib;SDL2_ttf.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -143,26 +143,38 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="CAlien.cpp" />
     <ClCompile Include="CBackGround.cpp" />
+    <ClCompile Include="CCollisionManager.cpp" />
     <ClCompile Include="CEnergy.cpp" />
     <ClCompile Include="CEngine.cpp" />
+    <ClCompile Include="CFontTexture.cpp" />
+    <ClCompile Include="CLaserGun.cpp" />
     <ClCompile Include="CLevels.cpp" />
     <ClCompile Include="CMainCharacter.cpp" />
     <ClCompile Include="CMenu.cpp" />
     <ClCompile Include="CMeteors.cpp" />
+    <ClCompile Include="CSoundManager.cpp" />
     <ClCompile Include="CTextureManager.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="CAlien.h" />
+    <ClInclude Include="CAlienLaserBeam.h" />
     <ClInclude Include="CBackGround.h" />
+    <ClInclude Include="CCollisionManager.h" />
     <ClInclude Include="CEngine.h" />
+    <ClInclude Include="CFontTexture.h" />
+    <ClInclude Include="CLaserGun.h" />
     <ClInclude Include="CLevels.h" />
     <ClInclude Include="CMainCharacter.h" />
     <ClInclude Include="CMenu.h" />
     <ClInclude Include="CMeteors.h" />
     <ClInclude Include="CEnergy.h" />
+    <ClInclude Include="CSoundManager.h" />
     <ClInclude Include="CTextureManager.h" />
     <ClInclude Include="CEnemy.h" />
+    <ClInclude Include="CComponent.h" />
     <ClInclude Include="IObject.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
